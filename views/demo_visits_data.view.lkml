@@ -36,6 +36,7 @@ view: demo_visits_data {
     sql: ${TABLE}.reported_end_at ;;
   }
   dimension_group: reported_start {
+    drill_fields: [care_recipient_last_name]
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.reported_start_at ;;
@@ -45,11 +46,13 @@ view: demo_visits_data {
     sql: ${TABLE}.scheduled_duration_mins ;;
   }
   dimension_group: scheduled_end {
+    drill_fields: [care_recipient_last_name]
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.scheduled_end_at ;;
   }
   dimension_group: scheduled_start {
+    drill_fields: [care_recipient_last_name]
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.scheduled_start_at ;;
