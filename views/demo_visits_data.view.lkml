@@ -30,6 +30,7 @@ view: demo_visits_data {
     sql: ${TABLE}.reported_duration_mins ;;
   }
   dimension_group: reported_end {
+    drill_fields: [care_recipient_last_name]
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.reported_end_at ;;
@@ -78,13 +79,13 @@ view: demo_visits_data {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	care_recipient_first_name,
-	care_recipient_last_name,
-	user_name,
-	users.id,
-	users.first_name,
-	users.last_name
-	]
+  care_recipient_first_name,
+  care_recipient_last_name,
+  user_name,
+  users.id,
+  users.first_name,
+  users.last_name
+  ]
   }
 
 }
